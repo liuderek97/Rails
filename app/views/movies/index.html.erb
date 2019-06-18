@@ -9,6 +9,7 @@
     <li><%= movie[":title"] %>: <%= movie[":rating"]%> </li> 
     <%= link_to "show", movie_path(index) %>
     <%= link_to "edit", edit_movie_path(index)%>
+    <%= link_to "delete", delete_movie_path(index)%>
   </ul>
 <%end%>
 

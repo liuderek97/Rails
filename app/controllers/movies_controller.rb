@@ -48,4 +48,13 @@ class MoviesController < ApplicationController
   end
 
 
+  # delete the movie
+
+  def delete
+      delete_movie = session[:movies] 
+      delete_movie.delete_at(params[:id].to_i)
+      session[:movies] = delete_movie
+      redirect_to movies_path
+  end
+
 end
