@@ -1,0 +1,24 @@
+<%= render "shared/top_nav"%>
+<h1>Edit Movie</h1>
+
+<form action="<%= movie_path(params[:id].to_i)%>" method="POST">
+
+  <!-- update and delete request must be sent as a hidden field in the form because the form mehtod only accepts post -->
+  <!-- <p>params = <%=params%></p>
+   -->
+   <input type="hidden" name="authenticity_token" value ="<% form_authenticity_token %>">
+   <input type="hidden" name="_method" value="put">
+  
+    <label>Title</label>
+    <br>
+    <input type="text" name="movie[:title]" value="<%= @movie[":title"] %>">
+    <br>
+    <br>
+    <label>Rating</label>
+    <br>
+    <input type="number" name="movie[:rating]" min="0" max="10" value="<%= @movie[":rating"] %>">
+    <br>
+    <br>
+    <input type="submit" value="Update">
+    
+  </form>

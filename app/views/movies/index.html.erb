@@ -1,0 +1,16 @@
+<%= render "shared/top_nav"%>
+
+<h1> Movies</h1>
+
+
+
+<%@movies.each_with_index do |movie, index| %>
+  <ul>
+    <li><%= movie[":title"] %>: <%= movie[":rating"]%> </li> 
+    <%= link_to "show", movie_path(index) %>
+    <%= link_to "edit", edit_movie_path(index)%>
+  </ul>
+<%end%>
+
+<%= link_to "Back", :back %>
+

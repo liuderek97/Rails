@@ -1,0 +1,5 @@
+<%= render "shared/top_nav"%>
+<h1> show a particular movie</h1>
+<h2> <%= @movie[":title"]%> </h2>
+<h2><strong>Rating:</strong> <%= @movie[":rating"] %></h2>
+<%= link_to "Back", :back %>
